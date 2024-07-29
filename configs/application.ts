@@ -19,13 +19,16 @@ class Application {
   private readonly routes: RouteInfo[] = [];
 
   constructor() {
+    // cài đặc template engine
     this.app.set("views", join(resolve("./app"), "views"));
     this.app.set("view engine", "pug");
 
+      //cài đătcj các công cụ giải mã
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: false }));
     this.app.use(cookieParser());
-
+ 
+      //xuất file tĩnh như CSS ,JS và các thư viện như bootstrap ,Vue
     this.app.use(express.static(join(resolve("app"), "assets")));
     this.app.use(
       "/css",
@@ -44,9 +47,14 @@ class Application {
       express.static(join(resolve("./node_modules"), "vue/dist"))
     );
 
+      //Cài đặc các route được xây dựng trong hệ thống
     this.mountRoutes();
+
+    //Báo lỗi khi hệ thống ghi nhận sai sốt
     this.on404Handler();
     this.onErrorHandler();
+
+    //Hàm dùng để hỗ trợ lt viên kra những route đã được cài đặt trong hệ thống
     this.getRoutes();
   }
 

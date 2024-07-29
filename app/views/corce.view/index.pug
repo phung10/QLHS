@@ -1,8 +1,24 @@
 extends ../layout
 
-block content
+block content  
   doctype html
   head
+    meta(charset='utf-8')
+    title ECOURSES - Online Courses HTML Template
+    meta(content='width=device-width, initial-scale=1.0' name='viewport')
+    meta(content='Free HTML Templates' name='keywords')
+    meta(content='Free HTML Templates' name='description')
+    // Favicon
+    link(href='/image/favicon.ico' rel='icon')
+    // Google Web Fonts
+    link(rel='preconnect' href='https://fonts.gstatic.com')
+    link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap' rel='stylesheet')
+    // Font Awesome
+    link(href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css' rel='stylesheet')
+    // Libraries Stylesheet
+    link(href='lib/owlcarousel/assets/owl.carousel.min.css' rel='stylesheet')
+    // Customized Bootstrap Stylesheet
+    link(href='css/style.css' rel='stylesheet')
   // Topbar Start
   .container-fluid.d-none.d-lg-block
     .row.align-items-center.py-4.px-xl-5
@@ -63,9 +79,9 @@ block content
             span.navbar-toggler-icon
           #navbarCollapse.collapse.navbar-collapse.justify-content-between
             .navbar-nav.py-0
-              a.nav-item.nav-link.active(href='/') Home
+              a.nav-item.nav-link(href='/') Home
               a.nav-item.nav-link(href='/about') About
-              a.nav-item.nav-link(href='/coures') Courses
+              a.nav-item.nav-link.active(href='/coures') Courses
               a.nav-item.nav-link(href='teacher.html') Teachers
               .nav-item.dropdown
                 a.nav-link.dropdown-toggle(href='#' data-toggle='dropdown') Blog
@@ -75,50 +91,17 @@ block content
               a.nav-item.nav-link(href='contact.html') Contact
             a.btn.btn-primary.py-2.px-4.ml-auto.d-none.d-lg-block(href='') Join Now
   // Navbar End
-  // Carousel Start
-  .container-fluid.p-0.pb-5.mb-5
-    #header-carousel.carousel.slide.carousel-fade(data-ride='carousel')
-      ol.carousel-indicators
-        li.active(data-target='#header-carousel' data-slide-to='0')
-        li(data-target='#header-carousel' data-slide-to='1')
-        li(data-target='#header-carousel' data-slide-to='2')
-      .carousel-inner
-        .carousel-item.active(style='min-height: 300px;')
-          img.position-relative.w-100(src='/image/carousel-1.jpg' style='min-height: 300px; object-fit: cover;')
-          .carousel-caption.d-flex.align-items-center.justify-content-center
-            .p-5(style='width: 100%; max-width: 900px;')
-              h5.text-white.text-uppercase.mb-md-3 Best Online Courses
-              h1.display-3.text-white.mb-md-4 Best Education From Your Home
-              a.btn.btn-primary.py-md-2.px-md-4.font-weight-semi-bold.mt-2(href='') Learn More
-        .carousel-item(style='min-height: 300px;')
-          img.position-relative.w-100(src='/image/carousel-2.jpg' style='min-height: 300px; object-fit: cover;')
-          .carousel-caption.d-flex.align-items-center.justify-content-center
-            .p-5(style='width: 100%; max-width: 900px;')
-              h5.text-white.text-uppercase.mb-md-3 Best Online Courses
-              h1.display-3.text-white.mb-md-4 Best Online Learning Platform
-              a.btn.btn-primary.py-md-2.px-md-4.font-weight-semi-bold.mt-2(href='') Learn More
-        .carousel-item(style='min-height: 300px;')
-          img.position-relative.w-100(src='/image/carousel-3.jpg' style='min-height: 300px; object-fit: cover;')
-          .carousel-caption.d-flex.align-items-center.justify-content-center
-            .p-5(style='width: 100%; max-width: 900px;')
-              h5.text-white.text-uppercase.mb-md-3 Best Online Courses
-              h1.display-3.text-white.mb-md-4 New Way To Learn From Home
-              a.btn.btn-primary.py-md-2.px-md-4.font-weight-semi-bold.mt-2(href='') Learn More
-  // Carousel End
-  // About Start
-  .container-fluid.py-5
-    .container.py-5
-      .row.align-items-center
-        .col-lg-5
-          img.img-fluid.rounded.mb-4.mb-lg-0(src='/image/about.jpg' alt='')
-        .col-lg-7
-          .text-left.mb-4
-            h5.text-primary.text-uppercase.mb-3(style='letter-spacing: 5px;') About Us
-            h1 Innovative Way To Learn
-          p
-            | Aliquyam accusam clita nonumy ipsum sit sea clita ipsum clita, ipsum dolores amet voluptua duo dolores et sit ipsum rebum, sadipscing et erat eirmod diam kasd labore clita est. Diam sanctus gubergren sit rebum clita amet, sea est sea vero sed et. Sadipscing labore tempor at sit dolor clita consetetur diam. Diam ut diam tempor no et, lorem dolore invidunt no nonumy stet ea labore, dolor justo et sit gubergren diam sed sed no ipsum. Sit tempor ut nonumy elitr dolores justo aliquyam ipsum stet
-          a.btn.btn-primary.py-md-2.px-md-4.font-weight-semi-bold.mt-2(href='') Learn More
-  // About End
+  // Header Start
+  .container-fluid.page-header(style='margin-bottom: 90px;')
+    .container
+      .d-flex.flex-column.justify-content-center(style='min-height: 300px')
+        h3.display-4.text-white.text-uppercase Courses
+        .d-inline-flex.text-white
+          p.m-0.text-uppercase
+            a.text-white(href='') Home
+          i.fa.fa-angle-double-right.pt-1.px-3
+          p.m-0.text-uppercase Courses
+  // Header End
   // Category Start
   .container-fluid.py-5
     .container.pt-5.pb-3
@@ -297,168 +280,6 @@ block content
                     small (250)
                   h5.m-0 $99
   // Courses End
-  // Registration Start
-  .container-fluid.bg-registration.py-5(style='margin: 90px 0;')
-    .container.py-5
-      .row.align-items-center
-        .col-lg-7.mb-5.mb-lg-0
-          .mb-4
-            h5.text-primary.text-uppercase.mb-3(style='letter-spacing: 5px;') Need Any Courses
-            h1.text-white 30% Off For New Students
-          p.text-white
-            | Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
-            | ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
-            | dolor
-          ul.list-inline.text-white.m-0
-            li.py-2
-              i.fa.fa-check.text-primary.mr-3
-              | Labore eos amet dolor amet diam
-            li.py-2
-              i.fa.fa-check.text-primary.mr-3
-              | Etsea et sit dolor amet ipsum
-            li.py-2
-              i.fa.fa-check.text-primary.mr-3
-              | Diam dolor diam elitripsum vero.
-        .col-lg-5
-          .card.border-0
-            .card-header.bg-light.text-center.p-4
-              h1.m-0 Sign Up Now
-            .card-body.rounded-bottom.bg-primary.p-5
-              form
-                .form-group
-                  input.form-control.border-0.p-4(type='text' placeholder='Your name' required='required')
-                .form-group
-                  input.form-control.border-0.p-4(type='email' placeholder='Your email' required='required')
-                .form-group
-                  select.custom-select.border-0.px-4(style='height: 47px;')
-                    option(selected='') Select a course
-                    option(value='1') Course 1
-                    option(value='2') Course 1
-                    option(value='3') Course 1
-                div
-                  button.btn.btn-dark.btn-block.border-0.py-3(type='submit') Sign Up Now
-  // Registration End
-  // Team Start
-  .container-fluid.py-5
-    .container.pt-5.pb-3
-      .text-center.mb-5
-        h5.text-primary.text-uppercase.mb-3(style='letter-spacing: 5px;') Teachers
-        h1 Meet Our Teachers
-      .row
-        .col-md-6.col-lg-3.text-center.team.mb-4
-          .team-item.rounded.overflow-hidden.mb-2
-            .team-img.position-relative
-              img.img-fluid(src='/image/team-1.jpg' alt='')
-              .team-social
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-twitter
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-facebook-f
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-linkedin-in
-            .bg-secondary.p-4
-              h5 Jhon Doe
-              p.m-0 Web Designer
-        .col-md-6.col-lg-3.text-center.team.mb-4
-          .team-item.rounded.overflow-hidden.mb-2
-            .team-img.position-relative
-              img.img-fluid(src='/image/team-2.jpg' alt='')
-              .team-social
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-twitter
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-facebook-f
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-linkedin-in
-            .bg-secondary.p-4
-              h5 Jhon Doe
-              p.m-0 Web Designer
-        .col-md-6.col-lg-3.text-center.team.mb-4
-          .team-item.rounded.overflow-hidden.mb-2
-            .team-img.position-relative
-              img.img-fluid(src='/image/team-3.jpg' alt='')
-              .team-social
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-twitter
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-facebook-f
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-linkedin-in
-            .bg-secondary.p-4
-              h5 Jhon Doe
-              p.m-0 Web Designer
-        .col-md-6.col-lg-3.text-center.team.mb-4
-          .team-item.rounded.overflow-hidden.mb-2
-            .team-img.position-relative
-              img.img-fluid(src='/image/team-4.jpg' alt='')
-              .team-social
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-twitter
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-facebook-f
-                a.btn.btn-outline-light.btn-square.mx-1(href='#')
-                  i.fab.fa-linkedin-in
-            .bg-secondary.p-4
-              h5 Jhon Doe
-              p.m-0 Web Designer
-  // Team End
-  // Testimonial Start
-  .container-fluid.py-5
-    .container.py-5
-      .text-center.mb-5
-        h5.text-primary.text-uppercase.mb-3(style='letter-spacing: 5px;') Testimonial
-        h1 What Say Our Students
-      .row.justify-content-center
-        .col-lg-8
-          .owl-carousel.testimonial-carousel
-            .text-center
-              i.fa.fa-3x.fa-quote-left.text-primary.mb-4
-              h4.font-weight-normal.mb-4
-                | Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-              img.img-fluid.mx-auto.mb-3(src='/image/testimonial-1.jpg' alt='')
-              h5.m-0 Client Name
-              span Profession
-            .text-center
-              i.fa.fa-3x.fa-quote-left.text-primary.mb-4
-              h4.font-weight-normal.mb-4
-                | Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-              img.img-fluid.mx-auto.mb-3(src='/image/testimonial-2.jpg' alt='')
-              h5.m-0 Client Name
-              span Profession
-            .text-center
-              i.fa.fa-3x.fa-quote-left.text-primary.mb-4
-              h4.font-weight-normal.mb-4
-                | Dolor eirmod diam stet kasd sed. Aliqu rebum est eos. Rebum elitr dolore et eos labore, stet justo sed est sed. Diam sed sed dolor stet amet eirmod eos labore diam
-              img.img-fluid.mx-auto.mb-3(src='/image/testimonial-3.jpg' alt='')
-              h5.m-0 Client Name
-              span Profession
-  // Testimonial End
-  // Blog Start
-  .container-fluid.py-5
-    .container.pt-5.pb-3
-      .text-center.mb-5
-        h5.text-primary.text-uppercase.mb-3(style='letter-spacing: 5px;') Our Blog
-        h1 Latest From Our Blog
-      .row.pb-3
-        .col-lg-4.mb-4
-          .blog-item.position-relative.overflow-hidden.rounded.mb-2
-            img.img-fluid(src='img/blog-1.jpg' alt='')
-            a.blog-overlay.text-decoration-none(href='')
-              h5.text-white.mb-3 Lorem elitr magna stet eirmod labore amet labore clita at ut clita
-              p.text-primary.m-0 Jan 01, 2050
-        .col-lg-4.mb-4
-          .blog-item.position-relative.overflow-hidden.rounded.mb-2
-            img.img-fluid(src='img/blog-2.jpg' alt='')
-            a.blog-overlay.text-decoration-none(href='')
-              h5.text-white.mb-3 Lorem elitr magna stet eirmod labore amet labore clita at ut clita
-              p.text-primary.m-0 Jan 01, 2050
-        .col-lg-4.mb-4
-          .blog-item.position-relative.overflow-hidden.rounded.mb-2
-            img.img-fluid(src='img/blog-3.jpg' alt='')
-            a.blog-overlay.text-decoration-none(href='')
-              h5.text-white.mb-3 Lorem elitr magna stet eirmod labore amet labore clita at ut clita
-              p.text-primary.m-0 Jan 01, 2050
-  // Blog End
   // Footer Start
   .container-fluid.bg-dark.text-white.py-5.px-sm-3.px-lg-5(style='margin-top: 90px;')
     .row.pt-5
@@ -543,5 +364,3 @@ block content
   script(src='mail/contact.js')
   // Template Javascript
   script(src='js/main.js')
-
-    

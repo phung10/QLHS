@@ -1,12 +1,18 @@
 import { HomeController } from "@controllers";
 import { Router } from "express";
 import { RestActions } from "../enum";
+import { AboutRoute } from "./about.route/about";
+import { CorseRoute } from "./corce.route/corce";
 
 export class Route {
   private static path = Router();
+  private static homeController = new HomeController();
 
   public static draw() {
-    Route.resource(this.path, HomeController, { only: [RestActions.Index] });
+    this.path.use("/coures", CorseRoute.draw());
+    this.path.use("/about", AboutRoute.draw());
+    this.path.route("/").get(this.homeController.index);
+    // Route.resource(this.path, HomeController, { only: [RestActions.Index] });
 
     return this.path;
   }
